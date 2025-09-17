@@ -2,22 +2,22 @@ package com.example;
 
 
 public class Personagem {
-String nome;
+private String nome;
 private int energia = 10;
 private int fome = 0;
 private int sono = 0;
 
-public Personagem(int energia, int fome, int sono){
-     System.out.println(energia);
-    System.out.println(this.energia);
-    if(energia >= 0 && energia <= 10)
-    this.energia =  energia;
-    if(fome >= 0 && fome <= 10)
-    this.fome =  fome;
-    if (sono >= 0 && sono <= 10)
-    this.sono = sono;
-
-
+public Personagem(String nome, int energia, int fome, int sono){
+    this.nome = nome;
+    if(energia >= 0 && energia <= 10){
+        this.energia = energia;
+    }
+    if(fome >= 0 && fome <= 10){
+        this.fome =  fome;
+    }
+    if (sono >= 0 && sono <= 10){
+        this.sono = sono;
+    }
 }
 
 public void cacar (){

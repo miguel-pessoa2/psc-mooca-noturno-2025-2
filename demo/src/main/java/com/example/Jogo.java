@@ -4,10 +4,8 @@ package com.example;
 public class Jogo {
 
     public static void main(String[] args) {
-        Personagem cacador = new Personagem(1, 1, 1);
-        //Personagem soneca = new Personagem();
-        cacador.nome = "João";
-    //soneca.nome = "Danilo";
+        Personagem cacador = new Personagem("Miguel", 1, 1, 1);
+        Personagem soneca = new Personagem("Danilo", 2, 2, 2);
 
 
         while(true){
@@ -21,10 +19,14 @@ public class Jogo {
         soneca.comer();
         cacador.cacar();
         soneca.cacar();
+
         System.out.println("========================");
+
             try {
                 Thread.sleep(2000);
-            } catch (InterruptedException ex) {
+            }
+            catch (InterruptedException ex) {
+
             }
         }
     }
