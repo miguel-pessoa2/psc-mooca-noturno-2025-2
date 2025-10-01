@@ -1,6 +1,8 @@
-
+import javax.swing.JOptionPane;
 
 public class Calculadora {
+
+    public String modelo = "PREMIUM240";
 
     public double somar(double ...valores){
         double total = 0;
@@ -20,6 +22,10 @@ public class Calculadora {
 
     public double dividir(double valor1, double valor2){
         return valor1 / valor2;
+    }
+    public void mensagem(){
+        JOptionPane.showMessageDialog(null, "modelo é: " + modelo);
+
     }
 
 }
