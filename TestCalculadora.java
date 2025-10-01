@@ -8,12 +8,24 @@ public class TestCalculadora {
         Calculadora cc = new CalculadoraCientifica();
         
         int op = 0;
+        int modelo = 0;
 
         double valor1;
         double valor2;
         double resultado;
 
         // Obtém o tipo de operação e os valores
+
+        try{
+            modelo = Integer.parseInt(JOptionPane.showInputDialog("Escolha um modelo de calculadora: \n1 - normal\n2 - cientifica"));
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "ESCOLHA INVÁLIDA!");
+            JOptionPane.showMessageDialog(null, "ENCERRANDO PROGRAMA...");
+            return;
+        }
+
         try{
             op = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma operação:\n1-soma \n2-subtração \n3-multiplicação \n4-divisao"));
 
@@ -45,6 +57,20 @@ public class TestCalculadora {
 
         }
 
-        JOptionPane.showMessageDialog(null, "Resultado: \n" + resultado);
+        JOptionPane.showMessageDialog(null, "Resultado: \n" + resultado + "\nmodelo da calculadora: " + getModeloResponse(modelo));
+    }
+
+    public static String getModeloResponse(int modelo){
+        if(modelo == 1){
+            return "normal";
+
+        }
+        else if(modelo == 2){
+            return "científica";
+
+        }else{
+            return "não identificado";
+        }
+
     }
 }
